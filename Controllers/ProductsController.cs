@@ -12,9 +12,15 @@ namespace BestShopIT.Controllers
         {
             this.context = context;
         }
+
+        //[HttpGet]
         public IActionResult Index()
         {
-            var products = context.Products.ToList();
+            //Z --> A
+            //var products = context.Products.OrderByDescending(p => p.Id).ToList();
+
+            //A --> Z
+            var products = context.Products.OrderBy(p => p.Id).ToList();
             return View(products);
         }
     }
