@@ -23,5 +23,10 @@ namespace BestShopIT.Controllers
             var products = context.Products.OrderBy(p => p.Id).ToList();
             return View(products);
         }
+
+        public IActionResult Create()
+        {
+            return View();
+        }
     }
 }
