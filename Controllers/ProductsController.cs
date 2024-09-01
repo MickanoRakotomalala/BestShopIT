@@ -1,5 +1,7 @@
-﻿using BestShopIT.Services;
+﻿using BestShopIT.Models;
+using BestShopIT.Services;
 using Microsoft.AspNetCore.Mvc;
+using System;
 
 namespace BestShopIT.Controllers
 {
@@ -8,7 +10,7 @@ namespace BestShopIT.Controllers
         private readonly ApplicationDbContext context;
 
         //Connection to the Database
-        public ProductsController(ApplicationDbContext context)
+        public ProductsController(ApplicationDbContext context, IWebHostEnvironment environment)
         {
             this.context = context;
         }
@@ -27,6 +29,31 @@ namespace BestShopIT.Controllers
         public IActionResult Create()
         {
             return View();
+        }
+
+        [HttpPost]
+        public IActionResult Create(ProductDto productDto)
+        {
+            if (productDto.ImageFile == null)
+            {
+                ModelState.AddModelError("ImageFile", "The image file is required");   
+            }
+
+            if (!ModelState.IsValid) 
+            {
+                return View(productDto);
+            }
+
+            // save the image file
+            string newFileName = DateTime.Now.ToString("yyyyMMddHHmmssfff");
+            newFileName += Path.GetExtension(productDto.ImageFile!.FileName);
+
+            string imageFullPath = Environment.WebRootPath + "/products" + newFileName;
+            using (var stream = System.IO.File.Create(imageFullPath))
+            { 
+                productDto.ImageFile.CopyTo(stream);
+            }
+            return RedirectToAction("Index","Products");
         }
     }
 }
