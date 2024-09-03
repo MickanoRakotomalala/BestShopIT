@@ -50,7 +50,7 @@ namespace BestShopIT.Controllers
             string newFileName = DateTime.Now.ToString("yyyyMMddHHmmssfff");
             newFileName += Path.GetExtension(productDto.ImageFile!.FileName);
 
-            string imageFullPath = environment.WebRootPath + "/products" + newFileName;
+            string imageFullPath = environment.WebRootPath + "/products/" + newFileName;
             using (var stream = System.IO.File.Create(imageFullPath))
             { 
                 productDto.ImageFile.CopyTo(stream);
@@ -148,6 +148,23 @@ namespace BestShopIT.Controllers
             context.SaveChanges();
 
             return RedirectToAction("Index","Products");
+        }
+
+        public IActionResult Delete(int id)
+        {
+            var product = context.Products.Find(id);
+            if (product == null)
+            {
+                return RedirectToAction("Index", "Products");
+            }
+
+            string imageFullPath = environment.WebRootPath + "/products/" + product.ImageFileName;
+            System.IO.File.Delete(imageFullPath);
+
+            context.Products.Remove(product);
+            context.SaveChanges(true);
+
+            return RedirectToAction("Index", "Products");
         }
     }
 }

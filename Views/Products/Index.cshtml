@@ -2,13 +2,12 @@
 @{
 }
 
-<h2 class="text-center mb-5">List of Products</h2>
+<h2 class="text-center mb-5 col-sm-5">List of Products</h2>
 <div class="row mb-5">
-    <div class="col">
-        <a class="btn btn-primary" asp-controller="Products" asp-action="Create">New Product</a>
-    </div>
-    <div class ="col">
-
+    <div class="col-sm-5"></div>
+    <div class="col-sm-5"></div>
+    <div class="col-sm-5">
+        <a class="btn btn-primary " asp-controller="Products" asp-action="Create">New Product</a>
     </div>
 </div> 
 
@@ -38,8 +37,11 @@
                 <td><img src="/products/@product.ImageFileName" width="100"/></td>
                 <td>@product.CreatedAt.ToString("dd/MM/yyyy")</td>
                 <td style="white-space:nowrap">
-                    <a class="btn btn-primary btn-sm" asp-controller="Products" asp-action="Edit" asp-route-id="@product.Id">Edit</a>
-                    <a class="btn btn-danger btn-sm" asp-controller="Products" asp-action="Delete" asp-route-id="@product.Id">Delete</a>
+                    <a class="btn-sm" asp-controller="Products" asp-action="Edit" asp-route-id="@product.Id">
+                        <img src="~/products/Edit.png"></a>
+
+                    <a class="btn-sm" asp-controller="Products" asp-action="Delete" asp-route-id="@product.Id" Onclick="return confirm('Are you sure ?')">
+                        <img src="~/products/Delete.png"></a>
                 </td>
             </tr>
         }
