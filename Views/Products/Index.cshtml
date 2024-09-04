@@ -71,7 +71,7 @@
                 <td>@product.Brand</td>
                 <td>@product.Category</td>
                 <td>@(product.Price)$</td>
-                <td><img src="/products/@product.ImageFileName" width="100"/></td>
+                <td><img src="/products/@product.ImageFileName" width="80" style="height: 120px; object-fit: contain"/></td>
                 <td>@product.CreatedAt.ToString("dd/MM/yyyy")</td>
                 <td style="white-space:nowrap">
                     <a class="btn-sm" asp-controller="Products" asp-action="Edit" asp-route-id="@product.Id">
