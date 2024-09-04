@@ -1,4 +1,5 @@
 ﻿using BestShopIT.Models;
+using BestShopIT.Services;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
 
@@ -6,16 +7,17 @@ namespace BestShopIT.Controllers
 {
     public class HomeController : Controller
     {
-        private readonly ILogger<HomeController> _logger;
+        private readonly ApplicationDbContext context;
 
-        public HomeController(ILogger<HomeController> logger)
+        public HomeController(ApplicationDbContext context)
         {
-            _logger = logger;
+            this.context = context;
         }
 
         public IActionResult Index()
         {
-            return View();
+            var products = context.Products.OrderByDescending(p => p.Id).Take(4).ToList();
+            return View(products);
         }
 
         public IActionResult Privacy()
