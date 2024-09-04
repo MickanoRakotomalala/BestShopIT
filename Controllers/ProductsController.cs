@@ -9,6 +9,7 @@ namespace BestShopIT.Controllers
     {
         private readonly ApplicationDbContext context;
         private readonly IWebHostEnvironment environment;
+        private readonly int pageSize = 5;
 
         //Connection to the Database
         public ProductsController(ApplicationDbContext context, IWebHostEnvironment environment)
@@ -18,13 +19,115 @@ namespace BestShopIT.Controllers
         }
 
         //[HttpGet]
-        public IActionResult Index()
+        public IActionResult Index(int pageIndex, string? search, string? column, string? orderBy)
         {
             //Z --> A
             //var products = context.Products.OrderByDescending(p => p.Id).ToList();
 
             //A --> Z
-            var products = context.Products.OrderBy(p => p.Id).ToList();
+            IQueryable<Product> query = context.Products;
+
+            //Search fonctionality
+            if(search != null)
+            {
+                query = query.Where(p => p.Name.Contains(search) || p.Brand.Contains(search));
+            }
+
+            //sort fonctionality
+            string[] validColumns = { "Name", "Brand", "Category", "Price", "CreatedAt" };
+            string[] validOrderBy = { "desc", "asc" };
+
+            if(!validColumns.Contains(column))
+            {
+                column = "Id";
+            }
+
+            if(!validOrderBy.Contains(orderBy))
+            {
+                orderBy = "desc";
+            }
+
+            if(column == "Name")
+            {
+                if (orderBy == "asc")
+                {
+                    query = query.OrderBy(p => p.Name);
+                }
+                else
+                {
+                    query = query.OrderByDescending(p => p.Name);
+                }
+            }
+            else if (column == "Brand")
+            {
+                if (orderBy == "asc")
+                {
+                    query = query.OrderBy(p => p.Brand);
+                }
+                else
+                {
+                    query = query.OrderByDescending(p => p.Brand);
+                }
+            }
+            else if (column == "Category")
+            {
+                if (orderBy == "asc")
+                {
+                    query = query.OrderBy(p => p.Category);
+                }
+                else
+                {
+                    query = query.OrderByDescending(p => p.Category);
+                }
+            }
+            else if (column == "Price")
+            {
+                if (orderBy == "asc")
+                {
+                    query = query.OrderBy(p => p.Price);
+                }
+                else
+                {
+                    query = query.OrderByDescending(p => p.Price);
+                }
+            }
+            else if (column == "CreatedAt")
+            {
+                if (orderBy == "asc")
+                {
+                    query = query.OrderBy(p => p.CreatedAt);
+                }
+                else
+                {
+                    query = query.OrderByDescending(p => p.CreatedAt);
+                }
+            }
+            else
+            {
+                query = query.OrderByDescending(p => p.Id);
+            }
+            //query = query.OrderBy(p => p.Id);
+
+            //Pagination fonctionality
+            if (pageIndex < 1)
+            {
+                pageIndex = 1;
+            }
+
+            decimal count = query.Count();
+            int totalPages = (int)Math.Ceiling(count / pageSize);
+            query = query.Skip((pageIndex - 1) * pageSize).Take(pageSize);
+
+            var products = query.ToList();
+
+            ViewData["PageIndex"] = pageIndex;
+            ViewData["TotalPages"] = totalPages;
+
+            ViewData["Search"] = search ?? "";
+
+            ViewData["Column"] = column;
+            ViewData["OrderBy"] = orderBy;
+
             return View(products);
         }
 
