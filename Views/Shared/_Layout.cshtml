@@ -3,7 +3,8 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - Best Shop IT</title>
+    <title>Best Shop IT</title>
+    <link rel="icon" href="/images/icon.png" />
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/BestShopIT.styles.css" asp-append-version="true" />
@@ -11,9 +12,11 @@
 <body>
     <header>
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
-            @* <div class="container-fluid"> *@
-            <div class="container">
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">Best Shop IT</a>
+            <div class="container-fluid">
+            @* <div class="container"> *@
+                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">
+                    <img src="/images/icon.png" alt="..." width="30" class="me-2" />Best Shop IT
+                </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -32,7 +35,7 @@
                             <a class="nav-link dropdown-toggle text-dark" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                 Admin
                             </a>
-                            <ul class="dropdown-menu">
+                            <ul class="dropdown-menu dropdown-menu-end">
                                 <li><a class="dropdown-item" asp-area="" asp-controller="Products" asp-action="Index">Products</a></li>
                                 <li><a class="dropdown-item" asp-area="" asp-controller="Home" asp-action="Index">Profile</a></li>
                                 <li><hr class="dropdown-divider"></li>
@@ -52,7 +55,8 @@
 
     <footer class="border-top footer text-muted">
         <div class="container">
-            &copy; 2024 - BestShopIT - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+            <img src="/images/icon.png" alt="..." width="30" class="me-2">
+            &copy; 2024 - Best Shop IT - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
         </div>
     </footer>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
