@@ -2,6 +2,11 @@
 @{
 }
 
+<div class="mt-2">
+    <a class="btn btn-outline-white" asp-controller="Store" asp-action="Index" role="button">
+        <img src="/images/Undo.png">
+    </a>
+</div>
 <div class="row">
     <div class="col-md-4 text-center">
         <img src="/products/@Model.ImageFileName" class="img-fluid mb-3" alt="..." width="250"/>
@@ -28,3 +33,5 @@
         <div style="white-space: pre-line">@Model.Description</div> 
     </div>
 </div>
+
+
