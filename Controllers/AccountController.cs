@@ -1,4 +1,4 @@
-﻿using BestShopIT.Migrations;
+﻿using BestShopIT.Models;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 
