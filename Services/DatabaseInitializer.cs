@@ -60,7 +60,7 @@ namespace BestShopIT.Services
             string initialPassword = "admin123";
 
             var result = await userManager.CreateAsync(user, initialPassword);
-            if (result.Succeeded) 
+            if (result.Succeeded)
             {
                 // set the user role
                 await userManager.AddToRoleAsync(user, "admin");
