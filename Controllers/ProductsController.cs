@@ -1,10 +1,12 @@
 ﻿using BestShopIT.Models;
 using BestShopIT.Services;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System;
 
 namespace BestShopIT.Controllers
 {
+    [Authorize(Roles = "admin")]
     [Route("/Admin/[controller]/{action=Index}/{id?}")]
     public class ProductsController : Controller
     {

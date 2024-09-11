@@ -1,4 +1,5 @@
 ﻿using BestShopIT.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 
@@ -116,5 +117,11 @@ namespace BestShopIT.Controllers
 
             return View(loginDto);
         }
+
+        [Authorize]
+        public IActionResult Profile()
+            { 
+                return View();
+            }
     }
 }
