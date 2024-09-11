@@ -37,12 +37,12 @@
                     </ul>
 
                     @using Microsoft.AspNetCore.Identity
-                    @inject SignInManager<ApplicationUser> SignInManager
-                    @inject UserManager<ApplicationUser> UserManager
+                    @inject SignInManager<ApplicationUser> signInManager
+                    @inject UserManager<ApplicationUser> userManager
 
-                        @if (SignInManager.IsSignedIn(User))
+                        @if (signInManager.IsSignedIn(User))
                         {
-                        var appUser = await UserManager.GetUserAsync(User);
+                        var appUser = await userManager.GetUserAsync(User);
 
                         if (User.IsInRole("admin"))
                             {
@@ -55,7 +55,7 @@
                                             <li><a class="dropdown-item" asp-area="" asp-controller="Products" asp-action="Index">Products</a></li>
                                             <li><a class="dropdown-item" asp-area="" asp-controller="Home" asp-action="Index">Profile</a></li>
                                             <li><hr class="dropdown-divider"></li>
-                                            <li><a class="dropdown-item" asp-area="" asp-controller="Logout" asp-action="Logout">Logout</a></li>
+                                            <li><a class="dropdown-item" asp-area="" asp-controller="Account" asp-action="Logout">Logout</a></li>
                                         </ul>
                                     </li>
                                 </ul>
