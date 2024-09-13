@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using System.ComponentModel.DataAnnotations;
 
 namespace BestShopIT.Controllers
 {
@@ -214,6 +215,47 @@ namespace BestShopIT.Controllers
             {
                 ViewBag.ErrorMessage = "Error: " + result.Errors.First().Description;
             }
+
+            return View();
+        }
+
+        public IActionResult ForgotPassword()
+        {
+            if (signInManager.IsSignedIn(User))
+            {
+                return RedirectToAction("Index", "Home");
+            }
+            return View();  
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> ForgotPassword([Required, EmailAddress]string email)
+        {
+            if (signInManager.IsSignedIn(User))
+            {
+                return RedirectToAction("Index", "Home");
+            }
+
+            ViewBag.Email = email;
+
+            if (!ModelState.IsValid) 
+            {
+                ViewBag.EmailError = ModelState["email"]?.Errors.First().ErrorMessage ?? "Invalid Email Address";
+                return View();
+            }
+
+            var user = await userManager.FindByEmailAsync(email);
+
+            if (user != null) 
+            {
+                //generate password reset token
+                var token = await userManager.GeneratePasswordResetTokenAsync(user);
+                string resetUrl = Url.ActionLink("ResetPassword", "Account", new { token }) ?? "URL Error";
+
+                Console.WriteLine("Password reset link: " + resetUrl);
+            }
+
+            ViewBag.SuccessMessage = "Please check your Email account and click on the Password Reset link";
 
             return View();
         }
