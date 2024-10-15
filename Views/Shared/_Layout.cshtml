@@ -100,12 +100,14 @@
                         </li>
                     </ul>
 
+                    @using BestShopIT.Services
+
                     <ul class="navbar-nav">
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Cart" asp-action="Index">
                                 <i class="bi bi-cart4 text-danger h3"></i>
                                 <span id="CartSize" class="badge rounded-pill bg-danger" style="vertical-align:top; margin-left:-5px;">
-                                    0
+                                    @CartHelper.GetCartSize(Context.Request, Context.Response)
                                 </span>
 
                             </a>
