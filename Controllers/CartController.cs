@@ -1,5 +1,6 @@
 ﻿using BestShopIT.Models;
 using BestShopIT.Services;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 
@@ -29,6 +30,36 @@ namespace BestShopIT.Controllers
             ViewBag.Total = subtotal + ShippingFee;
 
             return View();
+        }
+
+        [Authorize]
+        [HttpPost]
+        public IActionResult Index(CheckoutDto model) 
+        {
+            List<OrderItem> cartItems = CartHelper.GetCartItems(Request, Response, context);
+            decimal subtotal = CartHelper.GetSubtotal(cartItems);
+
+            ViewBag.CartItems = cartItems;
+            ViewBag.ShippingFee = ShippingFee;
+            ViewBag.Subtotal = subtotal;
+            ViewBag.Total = subtotal + ShippingFee;
+
+            if (!ModelState.IsValid)
+            { 
+                return View(model);
+            }
+
+            // Check if shopping cart is empty or not
+            if(cartItems.Count == 0)
+            {
+                ViewBag.ErrorMessage = "Your car is empty";
+                return View(model);
+            }
+
+            TempData["DeliveryAddress"] = model.DeliveryAddress;
+            TempData["PaymentMethod"] = model.PayementMehod;
+
+            return RedirectToAction("Confirm");
         }
     }
 }
