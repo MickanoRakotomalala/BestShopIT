@@ -11,7 +11,7 @@ namespace BestShopIT.Controllers
     public class AdminOrdersController : Controller
     {
         private readonly ApplicationDbContext context;
-        private readonly int pageSize = 2;
+        private readonly int pageSize = 5;
 
         public AdminOrdersController(ApplicationDbContext context)
         {
@@ -37,6 +37,21 @@ namespace BestShopIT.Controllers
             ViewBag.TotalPages = totalPages;
 
             return View();
+        }
+
+        public IActionResult Details(int id) 
+        {
+            var order = context.Orders.Include(o => o.Client).Include(o => o.Items)
+                .ThenInclude(oi => oi.Product).FirstOrDefault(o => o.Id == id);
+
+            if (order == null)
+            {
+                return RedirectToAction("Index");
+            }
+
+
+            ViewBag.NumOrders = context.Orders.Where(o => o.ClientId == order.ClientId).Count();
+            return View(order);
         }
     }
 }
