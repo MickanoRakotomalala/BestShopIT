@@ -120,7 +120,7 @@ namespace BestShopIT.Controllers
                 PayementMethod = paymentMethod,
                 PayementStatus = "pending",
                 PayementDetails = "",
-                OrderStatus = "Created",
+                OrderStatus = "created",
                 CreatedAt = DateTime.Now,
             };
 

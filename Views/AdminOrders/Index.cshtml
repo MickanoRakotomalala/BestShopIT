@@ -47,13 +47,13 @@
             }
 
             string orderBadgeColor = "bg-danger";
-            if (order.OrderStatus == "Created")
+            if (order.OrderStatus == "created")
             {
                 orderBadgeColor = "bg-warning text-dark";
             }
             else if (order.OrderStatus == "accepted")
             {
-                orderBadgeColor = "bg-succes";
+                orderBadgeColor = "bg-success";
             }
             else if (order.OrderStatus == "canceled")
             {
