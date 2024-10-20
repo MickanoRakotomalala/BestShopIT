@@ -53,7 +53,7 @@
             <div class="row mb-3">
                 <label class="col-sm-4 col-form-label">Password*</label>
                 <div class="col-sm-8">
-                    <input class="form-control" asp-for="Password">
+                    <input type="password" class="form-control" asp-for="Password">
                     <span asp-validation-for="Password" class="text-danger"></span>
                 </div>
             </div>
@@ -61,13 +61,13 @@
             <div class="row mb-3">
                 <label class="col-sm-4 col-form-label">Confirm Password*</label>
                 <div class="col-sm-8">
-                    <input class="form-control" asp-for="ConfirmPassword">
+                    <input type="password" class="form-control" asp-for="ConfirmPassword">
                     <span asp-validation-for="ConfirmPassword" class="text-danger"></span>
                 </div>
             </div>
 
             <div class="row mb-3">
-                <div class="offset-sm-4 col-sm-4 d-grid">
+                <div class="offset-sm-4 col-sm-4 d-grid btn-Register">
                     <button type="submit" class="btn btn-primary">Register</button>
                 </div>
                 <div class="col-sm-4 d-grid">

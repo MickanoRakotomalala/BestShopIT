@@ -1,11 +1,36 @@
 html {
-  font-size: 14px;
+  font-size: 12px;
 }
 
 @media (min-width: 768px) {
   html {
     font-size: 16px;
   }
+}
+
+@media (max-width:575px){
+  .table-responsive-sm .table thead tr{
+      font-size:8px;
+  }
+
+    .table-responsive-sm .table tbody tr {
+        font-size: 6px;
+    }
+
+    .table-responsive-sm .table tbody .btn {
+        font-size: 6px;
+    }
+
+    .table-responsive-sm .table tbody .img-product img {
+        background-color:green;
+        max-width:30px;
+        max-height:40px;
+    }
+
+    .row .btn-product,
+    .row .btn-Register {
+        margin-bottom:10px;
+    }
 }
 
 html {

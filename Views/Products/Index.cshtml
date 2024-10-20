@@ -48,51 +48,56 @@
     }
 </script>
 
-<table class="table">
-    <thead>
-        <tr>
-            @* <th>ID</th> *@
-            <th style="cursor:pointer;" onclick="sortTable('Name')">Name @getArrow("Name")</th>
-            <th style="cursor:pointer;" onclick="sortTable('Brand')">Brand @getArrow("Brand")</th>
-            <th style="cursor:pointer;" onclick="sortTable('Category')">Category @getArrow("Category")</th>
-            <th style="cursor:pointer;" onclick="sortTable('Price')">Price @getArrow("Price")</th>
-            <th >Image</th>
-            <th style="cursor:pointer;" onclick="sortTable('CreatedAt')">Created At @getArrow("CreatedAt")</th>
-            <th>Action</th>
-        </tr>
-    </thead>
-
-    <tbody>
-        @foreach(var product in Model)
-        {
+<div class="table-responsive-sm">
+    <table class="table">
+        <thead>
             <tr>
-                @* <td>@product.Id</td> *@
-                <td>@product.Name</td>
-                <td>@product.Brand</td>
-                <td>@product.Category</td>
-                <td>@(product.Price)$</td>
-                <td><img src="/products/@product.ImageFileName" width="80" style="height: 120px; object-fit: contain"/></td>
-                <td>@product.CreatedAt.ToString("dd/MM/yyyy")</td>
-                <td style="white-space:nowrap">
-                    <a class="btn-sm" asp-controller="Products" asp-action="Edit" asp-route-id="@product.Id">
-                        <img src="~/products/Edit.png"></a>
-
-                    <a class="btn-sm" asp-controller="Products" asp-action="Delete" asp-route-id="@product.Id" Onclick="return confirm('Are you sure ?')">
-                        <img src="~/products/Delete.png"></a>
-                </td>
+                @* <th>ID</th> *@
+                <th style="cursor:pointer;" onclick="sortTable('Name')">Name @getArrow("Name")</th>
+                <th style="cursor:pointer;" onclick="sortTable('Brand')">Brand @getArrow("Brand")</th>
+                <th style="cursor:pointer;" onclick="sortTable('Category')">Category @getArrow("Category")</th>
+                <th style="cursor:pointer;" onclick="sortTable('Price')">Price @getArrow("Price")</th>
+                <th>Image</th>
+                <th style="cursor:pointer;" onclick="sortTable('CreatedAt')">Created At @getArrow("CreatedAt")</th>
+                <th></th>
             </tr>
-        }
-    </tbody>
-</table>
+        </thead>
 
-<nav>
-    <ul class="pagination">
-        @for(int i = 1; i <= totalPages; i++)
-        {
-            string active = "";
-            if (i == pageIndex) active = "active";
-            <li class="page-item @active"><a class="page-link" asp-route-pageIndex="@i"
-            asp-route-search="@search" asp-route-column="@column" asp-route-orderBy="@orderBy">@i</a></li>
-        }
-    </ul>
-</nav>
+        <tbody>
+            @foreach (var product in Model)
+            {
+                <tr>
+                    @* <td>@product.Id</td> *@
+                    <td>@product.Name</td>
+                    <td>@product.Brand</td>
+                    <td>@product.Category</td>
+                    <td>@(product.Price)$</td>
+                    <td class="img-product"><img src="/products/@product.ImageFileName" style="width:80px;height:120px;" object-fit: contain" /></td>
+                    <td>@product.CreatedAt.ToString("dd/MM/yyyy")</td>
+                    <td style="white-space:nowrap;">
+                        <a class="btn-sm" asp-controller="Products" asp-action="Edit" asp-route-id="@product.Id" style="text-decoration:none;">
+                            <i class="bi bi-pencil-square" asp-controller="Products" asp-action="Edit" asp-route-id="@product.Id" style="color:#248f8f;"></i>
+                        </a>
+                        <a class="btn-sm" asp-controller="Products" asp-action="Delete" asp-route-id="@product.Id" style="text-decoration:none;" Onclick="return confirm('Are you sure ?')">
+                            <i class="bi bi-trash" style="color:red;"></i>
+                        </a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+    <nav>
+        <ul class="pagination">
+            @for (int i = 1; i <= totalPages; i++)
+            {
+                string active = "";
+                if (i == pageIndex) active = "active";
+                <li class="page-item @active">
+                    <a class="page-link" asp-route-pageIndex="@i"
+                       asp-route-search="@search" asp-route-column="@column" asp-route-orderBy="@orderBy">@i</a>
+                </li>
+            }
+        </ul>
+    </nav>
+</div>
