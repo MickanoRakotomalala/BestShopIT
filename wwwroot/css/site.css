@@ -48,20 +48,16 @@ body {
   padding-top : 75px;
 }
 
-.navbar-nav .active {
+.active {
     background-color: #D2DBDB;
     border-radius: 10px;
     font-weight:bold;
 }
 
-.nav-item{
-    margin-left:16px;
-}
-
-.nav-item a{
+.nav-active a {
     text-decoration: none;
     color: #303333;
-    font-weight:700;
+    font-weight: 740;
 }
 
 
