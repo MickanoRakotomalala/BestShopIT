@@ -1,4 +1,10 @@
-﻿// Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
-// for details on configuring this project to bundle and minify static web assets.
+﻿    const currentLocation = location.href;
+const menuItems = document.querySelectorAll('.nav-item a');
 
-// Write your JavaScript code.
+
+    menuItems.forEach(item => {
+        if (item.href === currentLocation) {
+            menuItems.forEach(i => i.parentElement.classList.remove('active'));
+            item.parentElement.classList.add('active');
+        }
+    });

@@ -124,8 +124,8 @@
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow fixed-top">
             <div class="container-fluid">
             @* <div class="container"> *@
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">
-                    <img src="/images/icon.png" alt="..." width="30" class="me-2" />Best Shop IT
+                <a class="navbar-brand" style="font-weight:700;color:#146363;" asp-area="" asp-controller="Home" asp-action="Index">
+                    <img src="/images/icon.png" alt="..." style="width:36px;margin-top:-20px;" class="me-2" /><span style="font-family:Brush Script MT;font-size:34px;">B</span>est Shop IT
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="Toggle navigation">
@@ -133,14 +133,14 @@
                 </button>
                 <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
                     <ul class="navbar-nav flex-grow-1">
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                        <li class="nav-item active">
+                            <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Store" asp-action="Index">Store</a>
+                            <a class="nav-link" asp-area="" asp-controller="Store" asp-action="Index">Store</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+                            <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
                         </li>
                     </ul>
 
@@ -148,7 +148,7 @@
 
                     <ul class="navbar-nav">
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Cart" asp-action="Index">
+                            <a class="nav-link" asp-area="" asp-controller="Cart" asp-action="Index">
                                 <i class="bi bi-cart4 text-danger h3"></i>
                                 <span id="CartSize" class="badge rounded-pill bg-danger" style="vertical-align:top; margin-left:-5px;">
                                     @CartHelper.GetCartSize(Context.Request, Context.Response)
@@ -170,16 +170,16 @@
                                 {
                                     <ul class="navbar-nav">
                                         <li class="nav-item">
-                                            <a class="nav-link dropdown-toggle text-dark" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                            <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="font-family:Courier New;">
                                                 @(appUser!.FirstName + " " + appUser!.LastName + " (Admin)")
                                             </a>
                                             <ul class="dropdown-menu dropdown-menu-end">
-                                                <li><a class="dropdown-item" asp-area="" asp-controller="Products" asp-action="Index">Products</a></li>
-                                                <li><a class="dropdown-item" asp-area="" asp-controller="AdminOrders" asp-action="Index">Orders</a></li>
-                                                <li><a class="dropdown-item" asp-area="" asp-controller="Users" asp-action="Index">Users</a></li>
-                                                <li><a class="dropdown-item" asp-area="" asp-controller="Account" asp-action="Profile">Profile</a></li>
+                                                <li><a class="dropdown-item" style="font-weight:500;" asp-area="" asp-controller="Products" asp-action="Index">Products</a></li>
+                                                <li><a class="dropdown-item" style="font-weight:500;" asp-area="" asp-controller="AdminOrders" asp-action="Index">Orders</a></li>
+                                                <li><a class="dropdown-item" style="font-weight:500;" asp-area="" asp-controller="Users" asp-action="Index">Users</a></li>
+                                                <li><a class="dropdown-item" style="font-weight:500;" asp-area="" asp-controller="Account" asp-action="Profile">Profile</a></li>
                                                 <li><hr class="dropdown-divider"></li>
-                                                <li><a class="dropdown-item" asp-area="" asp-controller="Account" asp-action="Logout">Logout</a></li>
+                                                <li><a class="dropdown-item" style="font-weight:500;" asp-area="" asp-controller="Account" asp-action="Logout">Logout</a></li>
                                             </ul>
                                         </li>
                                     </ul>
@@ -188,14 +188,14 @@
                                 {
                                     <ul class="navbar-nav">
                                         <li class="nav-item">
-                                            <a class="nav-link dropdown-toggle text-dark" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                            <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="font-family:Courier New;">
                                                 @(appUser!.FirstName + " " + appUser!.LastName + " (Client)")
                                             </a>
                                             <ul class="dropdown-menu dropdown-menu-end">
-                                                <li><a class="dropdown-item" asp-area="" asp-controller="ClientOrders" asp-action="Index">Orders</a></li>
-                                                <li><a class="dropdown-item" asp-area="" asp-controller="Account" asp-action="Profile">Profile</a></li>
+                                                <li><a class="dropdown-item" style="font-weight:500;" asp-area="" asp-controller="ClientOrders" asp-action="Index">Orders</a></li>
+                                                <li><a class="dropdown-item" style="font-weight:500;" asp-area="" asp-controller="Account" asp-action="Profile">Profile</a></li>
                                                 <li><hr class="dropdown-divider"></li>
-                                                <li><a class="dropdown-item" asp-area="" asp-controller="Account" asp-action="Logout">Logout</a></li>
+                                                <li><a class="dropdown-item" style="font-weight:500;" asp-area="" asp-controller="Account" asp-action="Logout">Logout</a></li>
                                             </ul>
                                         </li>
                                     </ul>
@@ -204,7 +204,7 @@
                                 {
                                     <ul class="navbar-nav">
                                         <li class="nav-item">
-                                            <a class="nav-link text-dark" asp-area="" asp-controller="Account" asp-action="Logout">Logout</a>
+                                            <a class="nav-link" asp-area="" asp-controller="Account" asp-action="Logout">Logout</a>
                                         </li>
                                     </ul>
                                 }
@@ -250,7 +250,7 @@
     </footer>
     <script src="~/lib/jquery/dist/jquery.min.js" defer></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js" defer></script>
-    <script src="~/js/site.js" asp-append-version="true" defer></script>
+    <script src="~/js/site.js" defer></script>
     @await RenderSectionAsync("Scripts", required: false)
 </body>
 </html>

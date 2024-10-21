@@ -31,6 +31,11 @@ html {
     .row .btn-Register {
         margin-bottom:10px;
     }
+
+    .active {
+        background-color: #D2DBDB;
+        border-radius: 10px;
+    }
 }
 
 html {
@@ -42,3 +47,21 @@ body {
   margin-bottom: 60px;
   padding-top : 75px;
 }
+
+.navbar-nav .active {
+    background-color: #D2DBDB;
+    border-radius: 10px;
+    font-weight:bold;
+}
+
+.nav-item{
+    margin-left:16px;
+}
+
+.nav-item a{
+    text-decoration: none;
+    color: #303333;
+    font-weight:700;
+}
+
+
