@@ -3,13 +3,13 @@
 }
 
 
-<div class="row">
-    <div class="col-md-8 mx-auto rounded border p-3">
+<div class="row" style="margin-top:20px;width:contain;">
+    <div class="col-md-4 mx-auto rounded border p-3">
         <h2 class="text-center mb-5">New Product</h2>
 
         <form method="post" enctype="multipart/form-data">
             <div class="row mb-3">
-                <label class="col-sm-4 col-form-label">Name</label>
+                <label class="col-sm-4 col-form-label" style="font-weight:600;">Name</label>
                 <div class="col-sm-8">
                     <input class="form-control" asp-for="Name">
                     <span asp-validation-for="Name" class="text-danger"></span>
@@ -17,7 +17,7 @@
             </div>            
             
             <div class="row mb-3">
-                <label class="col-sm-4 col-form-label">Brand</label>
+                <label class="col-sm-4 col-form-label" style="font-weight:600;">Brand</label>
                 <div class="col-sm-8">
                     <input class="form-control" asp-for="Brand">
                     <span asp-validation-for="Brand" class="text-danger"></span>
@@ -25,7 +25,7 @@
             </div>
 
             <div class="row mb-3">
-                <label class="col-sm-4 col-form-label">Category</label>
+                <label class="col-sm-4 col-form-label" style="font-weight:600;">Category</label>
                 <div class="col-sm-8">
                     <select class="form-select" asp-for="Category">
                         <option value="Other">Other</option>
@@ -39,7 +39,7 @@
             </div>
 
             <div class="row mb-3">
-                <label class="col-sm-4 col-form-label">Price</label>
+                <label class="col-sm-4 col-form-label" style="font-weight:600;">Price</label>
                 <div class="col-sm-8">
                     <input class="form-control" asp-for="Price">
                     <span asp-validation-for="Price" class="text-danger"></span>
@@ -47,7 +47,7 @@
             </div>
 
             <div class="row mb-3">
-                <label class="col-sm-4 col-form-label">Description</label>
+                <label class="col-sm-4 col-form-label" style="font-weight:600;">Description</label>
                 <div class="col-sm-8">
                     <textarea class="form-control" asp-for="Description"></textarea>
                     <span asp-validation-for="Description" class="text-danger"></span>
@@ -55,7 +55,7 @@
             </div>
 
             <div class="row mb-3">
-                <label class="col-sm-4 col-form-label">Image</label>
+                <label class="col-sm-4 col-form-label" style="font-weight:600;">Image</label>
                 <div class="col-sm-8">
                     <input class="form-control" asp-for="ImageFile">
                     <span asp-validation-for="ImageFile" class="text-danger"></span>

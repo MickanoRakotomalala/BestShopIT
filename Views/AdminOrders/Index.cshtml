@@ -1,7 +1,7 @@
 ﻿
 @{
 }
-<h3 class="text-center mb-4">List of Orders</h3>
+<h3 class="text-center mb-4" style="margin-top:20px;">List of Orders</h3>
 <div class="table-responsive-sm">
     <table class="table">
         <thead>
@@ -77,7 +77,7 @@
 
                 <tr>
                     @* <td>@order.Id</td> *@
-                    <td>@(order.Client.FirstName + "" + order.Client.LastName)</td>
+                    <td>@(order.Client.FirstName + " " + order.Client.LastName)</td>
                     <td>@count</td>
                     <td>@(total)$</td>
                     <td>@order.PayementMethod</td>
