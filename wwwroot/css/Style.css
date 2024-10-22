@@ -1,5 +1,20 @@
-﻿body {
+﻿.title-panel {
+    background-color: burlywood;
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    width: 200px;
+    height: 50px;
+    border-radius: 14px;
+    color: #146363;
+    font-family: Brush Script MT;
+    font-size:32px;
 }
-/*.row .col{
-    font-weight:900;
-}*/
+
+@media(max-width:575px){
+    .title-panel {
+        font-size:18px;
+        width: 140px;
+        height: 30px;
+    }
+}

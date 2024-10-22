@@ -3,9 +3,9 @@
 }
 
 <div class="row" style="margin-top:20px;">
-    <div class="col-md-4 mx-auto rounded border p-4">
-        <h2 class="text-center mb-3">Please Log In</h2>
-        <hr />
+    <div class="col-md-4 mx-auto rounded border p-4" style="background-color:#222929;">
+        <h2 class="text-center mb-3" style="font-family:Brush Script MT;color:#146363;">Please Log In</h2>
+        <hr style="background-color:white;"/>
             
         @if(ViewBag.ErrorMessage != null)
         {
@@ -17,13 +17,13 @@
 
         <form method="post">
             <div class="mb-3">
-                <label class="form-label">Email</label>
+                <label class="form-label" style="font-weight:600;color:#146363;">Email</label>
                 <input asp-for="Email" class="form-control"/>
                 <span asp-validation-for="Email" class="text-danger"></span>
             </div>
 
             <div class="mb-3">
-                <label class="form-label">Password</label>
+                <label class="form-label" style="font-weight:600;color:#146363;">Password</label>
                 <div class="input-group">
                     <input asp-for="Password" id="password" type="password" class="form-control" />
                     <i class="bi bi-eye input-group-text" id="togglePassword"></i>
@@ -33,7 +33,7 @@
 
             <div class="form-check mb-3">
                 <input class="form-chek-input" type="checkbox" asp-for="RememberMe"/>
-                <label class="form-check-label">Remember Me</label>
+                <label class="form-check-label" style="color:white;">Remember Me</label>
             </div>
 
             <div class="row mb-3">
