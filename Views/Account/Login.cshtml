@@ -3,8 +3,8 @@
 }
 
 <div class="row" style="margin-top:20px;">
-    <div class="col-md-4 mx-auto rounded border p-4" style="background-color:#222929;">
-        <h2 class="text-center mb-3" style="font-family:Brush Script MT;color:#146363;">Please Log In</h2>
+    <div class="col-md-4 mx-auto rounded border p-4" style="background-color:#146363;">
+        <h2 class="text-center mb-3" style="font-family:Brush Script MT;color:white;">Please Log In</h2>
         <hr style="background-color:white;"/>
             
         @if(ViewBag.ErrorMessage != null)
@@ -17,13 +17,13 @@
 
         <form method="post">
             <div class="mb-3">
-                <label class="form-label" style="font-weight:600;color:#146363;">Email</label>
+                <label class="form-label" style="font-weight:600;color:white;">Email</label>
                 <input asp-for="Email" class="form-control"/>
                 <span asp-validation-for="Email" class="text-danger"></span>
             </div>
 
             <div class="mb-3">
-                <label class="form-label" style="font-weight:600;color:#146363;">Password</label>
+                <label class="form-label" style="font-weight:600;color:white;">Password</label>
                 <div class="input-group">
                     <input asp-for="Password" id="password" type="password" class="form-control" />
                     <i class="bi bi-eye input-group-text" id="togglePassword"></i>
@@ -46,7 +46,7 @@
             </div>
 
             <div>
-                <a class="btn btn-link" asp-controller="Account" asp-action="ForgotPassword">
+                <a class="btn btn-link" asp-controller="Account" asp-action="ForgotPassword" style="text-decoration:none;color:white;">
                     Forgot your password ?
                 </a>
             </div>
