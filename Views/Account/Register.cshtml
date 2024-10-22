@@ -11,7 +11,7 @@
 
         <form method="post">
             <div class="row mb-3">
-                <label class="col-sm-4 col-form-label">First Name*</label>
+                <label class="col-sm-4 col-form-label" style="font-weight:600;">First Name*</label>
                 <div class="col-sm-8">
                     <input class="form-control" asp-for="FirstName">
                     <span asp-validation-for="FirstName" class="text-danger"></span>
@@ -19,7 +19,7 @@
             </div>
 
             <div class="row mb-3">
-                <label class="col-sm-4 col-form-label">Last Name*</label>
+                <label class="col-sm-4 col-form-label" style="font-weight:600;">Last Name*</label>
                 <div class="col-sm-8">
                     <input class="form-control" asp-for="LastName">
                     <span asp-validation-for="LastName" class="text-danger"></span>
@@ -27,7 +27,7 @@
             </div>
 
             <div class="row mb-3">
-                <label class="col-sm-4 col-form-label">Email*</label>
+                <label class="col-sm-4 col-form-label" style="font-weight:600;">Email*</label>
                 <div class="col-sm-8">
                     <input class="form-control" asp-for="Email">
                     <span asp-validation-for="Email" class="text-danger"></span>
@@ -35,7 +35,7 @@
             </div>
 
             <div class="row mb-3">
-                <label class="col-sm-4 col-form-label">Phone</label>
+                <label class="col-sm-4 col-form-label" style="font-weight:600;">Phone</label>
                 <div class="col-sm-8">
                     <input class="form-control" asp-for="PhoneNumber">
                     <span asp-validation-for="PhoneNumber" class="text-danger"></span>
@@ -43,7 +43,7 @@
             </div>
 
             <div class="row mb-3">
-                <label class="col-sm-4 col-form-label">Address</label>
+                <label class="col-sm-4 col-form-label" style="font-weight:600;">Address</label>
                 <div class="col-sm-8">
                     <input class="form-control" asp-for="Address">
                     <span asp-validation-for="Address" class="text-danger"></span>
@@ -51,17 +51,23 @@
             </div>
 
             <div class="row mb-3">
-                <label class="col-sm-4 col-form-label">Password*</label>
+                <label class="col-sm-4 col-form-label" style="font-weight:600;">Password*</label>
                 <div class="col-sm-8">
-                    <input type="password" class="form-control" asp-for="Password">
+                    <div class="input-group">
+                        <input type="password" id="Regpassword" class="form-control" asp-for="Password">
+                        <i class="bi bi-eye input-group-text" id="toggleregpassword"></i>
+                    </div>
                     <span asp-validation-for="Password" class="text-danger"></span>
                 </div>
             </div>
 
             <div class="row mb-3">
-                <label class="col-sm-4 col-form-label">Confirm Password*</label>
+                <label class="col-sm-4 col-form-label" style="font-weight:600;">Confirm Password*</label>
                 <div class="col-sm-8">
-                    <input type="password" class="form-control" asp-for="ConfirmPassword">
+                    <div class="input-group">
+                        <input type="password" id="ConfRegpassword" class="form-control" asp-for="ConfirmPassword">
+                        <i class="bi bi-eye input-group-text" id="toggleconfregpassword"></i>
+                    </div>
                     <span asp-validation-for="ConfirmPassword" class="text-danger"></span>
                 </div>
             </div>

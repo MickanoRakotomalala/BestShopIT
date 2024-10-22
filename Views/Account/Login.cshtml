@@ -25,8 +25,8 @@
             <div class="mb-3">
                 <label class="form-label">Password</label>
                 <div class="input-group">
-                    <input asp-for="Password" type="password" class="form-control" />
-                    <span class="btn-md input-group-text" style="justify-content:center;align-items:center;"><i class="bi bi-eye"></i></span>
+                    <input asp-for="Password" id="password" type="password" class="form-control" />
+                    <i class="bi bi-eye input-group-text" id="togglePassword"></i>
                 </div>
                 <span asp-validation-for="Password" class="text-danger"></span>
             </div>
