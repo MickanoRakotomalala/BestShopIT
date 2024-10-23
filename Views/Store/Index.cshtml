@@ -1,7 +1,7 @@
 ﻿@model StoreSearchModel
 @{
 }
-<h2 class="pb-4 text-center container py-2 title-panel">Products</h2>
+<h2 class="pb-4 text-center container py-2 title-panel" id="txtanim">Products</h2>
 
 <form class="row g-3 mb-3">
     <div class="col-lg-2 col-md-4">
@@ -39,7 +39,7 @@
 <div class="row mb-5 g-3">
     @foreach (var product in ViewBag.Products)
     {
-        <div class="col-lg-3 col-md-6">
+        <div class="col-lg-3 col-md-6 style-product">
             <div class="rounded border shadow p-3 text-center h-100">
                 <img src="/products/@product.ImageFileName" class="img-fluid" alt="..."
                      style="height: 160px; object-fit :contain" />

@@ -1,5 +1,5 @@
 ﻿    const currentLocation = location.href;
-const menuItems = document.querySelectorAll('.nav-active a');
+    const menuItems = document.querySelectorAll('.nav-active a');
 
 
     menuItems.forEach(item => {
@@ -8,3 +8,4 @@ const menuItems = document.querySelectorAll('.nav-active a');
             item.parentElement.classList.add('active');
         }
     });
+

@@ -1,14 +1,14 @@
 ﻿.title-panel {
-    background-color: burlywood;
+    background-color: #146363;
     display: flex;
     justify-content: center;
-    margin-top: 20px;
+    margin-top: 30px;
     width: 200px;
     height: 50px;
     border-radius: 14px;
-    color: #146363;
+    color: white;
     font-family: Brush Script MT;
-    font-size:32px;
+    font-size: 32px;
 }
 
 @media(max-width:575px){
@@ -17,4 +17,8 @@
         width: 140px;
         height: 30px;
     }
+}
+
+.style-product :hover {
+    zoom:95%;
 }
