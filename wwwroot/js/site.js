@@ -1,6 +1,5 @@
 ﻿    const currentLocation = location.href;
-    const menuItems = document.querySelectorAll('.nav-active a');
-
+    const menuItems = document.querySelectorAll('.nav-active');
 
     menuItems.forEach(item => {
         if (item.href === currentLocation) {
@@ -9,3 +8,6 @@
         }
     });
 
+function activeStoreNav() {
+    document.getElementById('activeStore').classList.add("actived");
+};
