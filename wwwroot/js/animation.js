@@ -46,19 +46,3 @@ function animateText() {
     //}, 500);
 }
 setInterval(animateText, 2500);
-
-const txt = document.getElementById('txtanim');
-function animateTextProduct() {
-    setTimeout(() => {
-        txt.style.transform = 'rotate(10deg)';
-    }, 100);
-
-    setTimeout(() => {
-        txt.style.transform = 'rotate(-10deg)';
-    }, 300);
-
-    setTimeout(() => {
-        txt.style.transform = 'translateX(0)';
-    }, 500);
-}
-setInterval(animateTextProduct, 2500);

@@ -20,7 +20,7 @@ namespace BestShopIT.Controllers
             return View(products);
         }
 
-        public IActionResult Privacy()
+        public IActionResult Help()
         {
             return View();
         }

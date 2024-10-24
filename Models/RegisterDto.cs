@@ -10,9 +10,9 @@ namespace BestShopIT.Models
         public string LastName { get; set; } = "";
         [Required, EmailAddress, MaxLength(100)]
         public string Email { get; set; } = "";
-        [Phone(ErrorMessage = "The format of the Phone Number is not valid"),MaxLength(20)]
-        public string? PhoneNumber { get; set; }
-        [Required, MaxLength(200)]
+        [Required(ErrorMessage = "The PhoneNumber field is required"), MaxLength(20),MinLength(10)]
+        public string? PhoneNumber { get; set; } = "";
+        [Required(ErrorMessage = "The Address field is required"), MaxLength(80)]
         public string Address { get; set; } = "";
         [Required, MaxLength(100)]
         public string Password { get; set; } = "";
