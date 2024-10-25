@@ -22,3 +22,10 @@
 .style-product :hover {
     zoom:95%;
 }
+
+.account-log {
+    text-decoration:none;
+    color:#08618d;
+    font-weight:600;
+    margin-left:12px;
+}

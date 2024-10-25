@@ -3,14 +3,14 @@
 }
 
 
-<div class="col-md-4 mx-auto rounded border p-4 mt-md-5 text-white" style="background-color:#146363;">
+<div class="col-md-4 mx-auto rounded border p-4 mt-md-5 text-white" style="background-color:#08618d;">
     <h2 class="text-center mb-3">Order Details</h2>
     <hr/>
 
     @if (ViewBag.SuccessMessage != null)
     {
         <div class="alert alert-success" role="alert">@ViewBag.SuccessMessage</div>
-        <a class="btn btn-outline-primary" asp-controller="Home" asp-action="Index">Back</a>
+        <a class="btn btn-outline-primary text-white" asp-controller="Home" asp-action="Index">Back</a>
     }
     else
     {
@@ -37,7 +37,7 @@
                     <button type="submit" class="btn btn-primary">Confirm</button>
                 </div>
                 <div class="col-sm-6 d-grid">
-                    <a class="btn btn-outline-primary" asp-controller="Cart" asp-action="Index">Back</a>
+                    <a class="btn btn-outline-primary text-white" asp-controller="Cart" asp-action="Index">Back</a>
                 </div>
             </div>
         </form>
