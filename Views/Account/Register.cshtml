@@ -54,8 +54,8 @@
                 <label class="col-sm-4 col-form-label" style="font-weight:600;color:white;">Password*</label>
                 <div class="col-sm-8">
                     <div class="input-group">
-                        <input type="password" id="Regpassword" class="form-control" asp-for="Password">
-                        <i class="bi bi-eye input-group-text" id="toggleregpassword"></i>
+                        <input type="password" id="rpw" class="form-control" asp-for="Password">
+                        <i class="bi bi-eye input-group-text" id="togglerpw"></i>
                     </div>
                     <span asp-validation-for="Password" class="text-danger"></span>
                 </div>
@@ -65,8 +65,8 @@
                 <label class="col-sm-4 col-form-label" style="font-weight:600;color:white;">Confirm Password*</label>
                 <div class="col-sm-8">
                     <div class="input-group">
-                        <input type="password" id="ConfRegpassword" class="form-control" asp-for="ConfirmPassword">
-                        <i class="bi bi-eye input-group-text" id="toggleconfregpassword"></i>
+                        <input type="password" id="crpw" class="form-control" asp-for="ConfirmPassword">
+                        <i class="bi bi-eye input-group-text" id="togglecrpw"></i>
                     </div>
                     <span asp-validation-for="ConfirmPassword" class="text-danger"></span>
                 </div>

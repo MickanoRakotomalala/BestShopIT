@@ -1,76 +1,70 @@
 ﻿document.addEventListener("DOMContentLoaded", function () {
-    const Password = document.getElementById('password');
-    const togglePassword = document.getElementById('togglePassword');
+    const Password = document.getElementById('pw');
 
-    togglePassword.addEventListener('click', function () {
+    document.getElementById('togglepw').addEventListener('click', function () {
         const type = Password.getAttribute('type') === 'password' ? 'text' : 'password';
         Password.setAttribute('type', type);
 
         this.classList.toggle('bi-eye');
         this.classList.toggle('bi-eye-slash');
-    });
+    })
 });
 document.addEventListener("DOMContentLoaded", function () {
-    const oldPassword = document.getElementById('oldpassword');
-    const toggleoldPassword = document.getElementById('toggleoldPassword');
+    const oldPassword = document.getElementById('oldpw');
 
-    toggleoldPassword.addEventListener('click', function () {
+    document.getElementById('toggleoldpw').addEventListener('click', function () {
         const typeoldpassword = oldPassword.getAttribute('type') === 'password' ? 'text' : 'password';
         oldPassword.setAttribute('type', typeoldpassword);
 
         this.classList.toggle('bi-eye');
         this.classList.toggle('bi-eye-slash');
-    });
+    })
 });
 
 document.addEventListener("DOMContentLoaded", function () {
-    const newPassword = document.getElementById('newpassword');
-    const togglenewPassword = document.getElementById('togglenewPassword');
+    const newPassword = document.getElementById('newpw');
 
-    togglenewPassword.addEventListener('click', function () {
+    document.getElementById('togglenewpw').addEventListener('click', function () {
         const typenewpassword = newPassword.getAttribute('type') === 'password' ? 'text' : 'password';
         newPassword.setAttribute('type', typenewpassword);
 
         this.classList.toggle('bi-eye');
         this.classList.toggle('bi-eye-slash');
-    });
+    })
 });
 
 document.addEventListener("DOMContentLoaded", function () {
-    const confirmPassword = document.getElementById('confirmpassword');
-    const toggleconfirmPassword = document.getElementById('toggleconfirmPassword');
+    const confirmPassword = document.getElementById('cpw');
 
-    toggleconfirmPassword.addEventListener('click', function () {
+    document.getElementById('togglecpw').addEventListener('click', function () {
         const typeconfirmpassword = confirmPassword.getAttribute('type') === 'password' ? 'text' : 'password';
         confirmPassword.setAttribute('type', typeconfirmpassword);
 
         this.classList.toggle('bi-eye');
         this.classList.toggle('bi-eye-slash');
-    });
+    })
 });
 
 document.addEventListener("DOMContentLoaded", function () {
-    const RegPassword = document.getElementById('Regpassword');
-    const toggleregPassword = document.getElementById('toggleregpassword');
+    const RegPassword = document.getElementById('rpw');
 
-    toggleregPassword.addEventListener('click', function () {
+    document.getElementById('togglerpw').addEventListener('click', function () {
         const typeregpassword = RegPassword.getAttribute('type') === 'password' ? 'text' : 'password';
         RegPassword.setAttribute('type', typeregpassword);
 
         this.classList.toggle('bi-eye');
         this.classList.toggle('bi-eye-slash');
-    });
+    })
 });
 
 document.addEventListener("DOMContentLoaded", function () {
-    const confRegPassword = document.getElementById('ConfRegpassword');
-    const toggleconfregPassword = document.getElementById('toggleconfregpassword');
+    const confRegPassword = document.getElementById('crpw');
 
-    toggleconfregPassword.addEventListener('click', function () {
+    document.getElementById('togglecrpw').addEventListener('click', function () {
         const typeconfregpassword = confRegPassword.getAttribute('type') === 'password' ? 'text' : 'password';
         confRegPassword.setAttribute('type', typeconfregpassword);
 
         this.classList.toggle('bi-eye');
         this.classList.toggle('bi-eye-slash');
-    });
+    })
 });
