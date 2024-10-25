@@ -21,12 +21,15 @@
     .account-position{
         margin-bottom:14px;
         margin-top:10px;
-
     }
 }
 
 .style-product :hover {
     zoom:95%;
+}
+
+.account-position {
+    margin-left: 14px;
 }
 
 .account-log {
