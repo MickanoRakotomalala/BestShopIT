@@ -1,6 +1,6 @@
 ﻿using BestShopIT.Models;
 using Microsoft.AspNetCore.Identity;
-
+using System.Data.SqlClient;
 namespace BestShopIT.Services
 {
     public class DatabaseInitializer
