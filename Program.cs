@@ -7,7 +7,7 @@ using sib_api_v3_sdk.Client;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
+// Connection with database
 builder.Services.AddControllersWithViews();
 
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
