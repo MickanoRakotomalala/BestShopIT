@@ -84,11 +84,15 @@
                     <td><span class="badge rounded-pill @paymentBadgeColor" style="text-align:center;justify-content:center;">@order.PayementStatus</span></td>
                     <td><span class="badge rounded-pill @orderBadgeColor" style="text-align:center;justify-content:center;">@order.OrderStatus</span></td>
                     <td>@order.CreatedAt.ToString("MM/dd/yyyy")</td>
-                    <td>
+                    <td style="white-space:nowrap;">
                         <a class="btn-sm" asp-controller="AdminOrders" asp-action="Details"
                            asp-route-id="@order.Id">
                             <i class="bi bi-pencil-square" style="color:#248f8f;"></i>
                        </a>
+                        <a class="btn-sm" asp-controller="AdminOrders" asp-action="Delete" 
+                            asp-route-id="@order.Id" Onclick="return confirm('Are you sure to delete this order ?')">
+                            <i class="bi bi-trash" style="color:red;"></i>
+                        </a>
                     </td>
                 </tr>
             }
