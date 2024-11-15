@@ -89,10 +89,6 @@
                            asp-route-id="@order.Id">
                             <i class="bi bi-pencil-square" style="color:#248f8f;"></i>
                        </a>
-                        <a class="btn-sm" asp-controller="AdminOrders" asp-action="Delete" 
-                            asp-route-id="@order.Id" Onclick="return confirm('Are you sure to delete this order ?')">
-                            <i class="bi bi-trash" style="color:red;"></i>
-                        </a>
                     </td>
                 </tr>
             }

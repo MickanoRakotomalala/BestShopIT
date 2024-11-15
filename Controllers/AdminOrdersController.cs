@@ -82,19 +82,5 @@ namespace BestShopIT.Controllers
             return RedirectToAction("Details", new { id });
         }
 
-
-        public ActionResult Delete(int id)
-        {
-            var orderItem = context.Orders.Find(id);
-            if (orderItem == null)
-            {
-                return RedirectToAction("Index","AdminOrders");
-            }
-
-            context.Orders.Remove(orderItem);
-            context.SaveChanges(true);
-
-            return RedirectToAction("Index","AdminOrders");
-        }
     }
 }
