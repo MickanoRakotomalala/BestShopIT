@@ -5,7 +5,8 @@ let typed = new Typed(".typing", {
     ],
     typeSpeed: 120,
     BackSpeed: 200,
-    loop: true
+    loop: true,
+    cursorChar: ""
 });
 
 const text = document.getElementById('animatedNewProducts');

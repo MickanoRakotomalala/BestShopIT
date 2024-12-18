@@ -8,7 +8,6 @@
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/BestShopIT.styles.css" asp-append-version="true" />
-    <link rel="stylesheet" href="~/css/Style.css" asp-append-version="true" />
     <!-- Option 1: Include in HTML -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
 </head>
@@ -227,7 +226,7 @@
     </header>
     @if(ViewData["HomePage"] == null)
     {        
-        <div class="container">
+        <div class="container body-content">
             <main role="main" class="pb-3">
                 @RenderBody()
             </main>
@@ -238,12 +237,37 @@
         @RenderBody()
     }
 
-    <footer class="border-top footer text-muted fixed-bottom">
-        <div class="container-fluid" style="background-color:darkgray">
+    <footer class="container-fluid fixed">
+        <div class="container">
             <div class="row">
-                <div class="offset-sm-5 col-sm-2 offset-sm-5  align-content-sm-center mt-md-3">
-                    <p class="text-white"><img src="/images/icon.png" alt="..."  class="me-2" style="width:24px;"> &copy; 2024 - Developer : Mickano RAKOTOMALALA</p>
+                <div class="col-md-6 col-sm-6">
+                    <div class="row">
+                        <div class="col-4">
+                            <img src="~/images/icon.png" alt="logo" />
+                        </div>
+                        <div class="col-8">
+                            <p><i class="bi bi-laptop me-2"></i><span>Best Shopt IT</span></p>
+                            <p><i class="bi bi-signpost me-2"></i><span>Antananarivo Madagascar</span></p>
+                            <p><i class="bi bi-shop-window me-2"></i><span>Site Ecommerce</span></p>
+                        </div>
+                    </div>
                 </div>
+                <div class="col-md-6 col-sm-6">
+                    <label>SOCIAL NETWORK</label>
+                    <ul>
+                        <li class="me-3"><a href="https://www.facebook.com/mickano.rakotomalala" target="_blank"><i class="bi bi-facebook"></i></a></li>
+                        <li class="me-3"><a href="https://www.linkedin.com/in/nantenaina-mickano-rakotomalala-55a3a11ab" target="_blank"><i class="bi bi-linkedin"></i></a></li>
+                        <li class="me-3"><a href="https://wa.me/+261341029531" target="_blank"><i class="bi bi-whatsapp"></i></a></li>
+                        <li class="me-5"><a href="mailto:rakotomalalamickano@gmail.com" target="_blank"><i class="bi bi-envelope"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <hr />
+            <div class="Developer">
+                <p>&copy; @DateTime.Now.Year - Developer : Mickano RAKOTOMALALA</p>
             </div>
         </div>
     </footer>

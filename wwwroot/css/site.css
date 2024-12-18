@@ -38,15 +38,24 @@ html {
     }
 }
 
-html {
-  position: relative;
-  min-height: 100%;
+
+
+.body-content {
+    margin-top: 90px;
+    margin-bottom: 30px;
+    padding-left: 15px;
+    padding-right: 15px;
+    flex: 1;
 }
 
-body {
-  margin-bottom: 60px;
-  padding-top : 75px;
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    display: grid;
+    grid-template-rows: 1fr auto;
 }
+
 
 .active {
     background-color: #D2DBDB;
@@ -59,5 +68,140 @@ body {
     color: #303333;
     font-weight: 740;
 }
+
+
+/*Home*/
+.HomePanel{
+    margin-top:80px;
+}
+
+.typing{
+    font-size:42px;
+    font-weight:400;
+}
+
+.title-panel {
+    background-color: #146363;
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+    width: 200px;
+    height: 50px;
+    border-radius: 14px;
+    color: white;
+    font-family: Brush Script MT;
+    font-size: 32px;
+}
+
+/*footer*/
+footer {
+    background-color: #555555;
+    color: white;
+    padding: 12px;
+    height: 100%;
+}
+
+footer .col-md-6 {
+    margin-bottom: 20px;
+}
+
+footer .col-md-6 label {
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 16px;
+}
+
+footer .col-md-6 ul,
+footer .col-md-6 label {
+    display: flex;
+    justify-content: center;
+}
+
+footer .col-md-6 ul li {
+    list-style-type: none;
+    font-size: 28px;
+}
+
+footer .col-md-6 ul li a {
+    text-decoration: none;
+    color: white;
+}
+
+.Developer {
+    display: flex;
+    justify-content: center;
+}
+
+.col-8 p {
+    font-size: 18px;
+}
+
+.col-4 img {
+    width: 100px;
+    height: 140px;
+}
+
+.style-product :hover {
+    zoom: 95%;
+}
+
+.account-position {
+    margin-left: 14px;
+}
+
+.account-log {
+    text-decoration: none;
+    color: #08618d;
+    font-weight: 600;
+    border: 1px solid #08618d;
+    border-radius: 5px;
+    padding: 5px;
+}
+
+    .account-log:hover {
+        background-color: #08618d;
+        color: ghostwhite;
+        border: 2px solid white;
+    }
+
+/*Responsive*/
+@media(max-width:992px) {
+    .col-4 img {
+        width: 60px;
+        height: 80px;
+    }
+
+    .col-8 p {
+        font-size: 10px;
+    }
+
+    .col-md-6 label {
+        font-size: 20px;
+    }
+
+    .col-md-6 ul li {
+        font-size: 18px;
+    }
+}
+
+@media (max-width:768px) {
+    .Developer p {
+        font-size: 12px;
+    }
+}
+
+@media screen and (max-width:576px) {
+    .title-panel {
+        font-size: 18px;
+        width: 140px;
+        height: 30px;
+    }
+
+    .account-position {
+        margin-bottom: 14px;
+        margin-top: 10px;
+    }
+}
+
 
 
