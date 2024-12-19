@@ -39,14 +39,14 @@ html {
 }
 
 
-
-.body-content {
-    margin-top: 90px;
+/*.body-content {
+    margin-top: 80px;
     margin-bottom: 30px;
     padding-left: 15px;
     padding-right: 15px;
     flex: 1;
-}
+}*/
+
 
 body, html {
     margin: 0;
@@ -70,20 +70,21 @@ body, html {
 }
 
 
-/*Home*/
+/*Home,Orders,Users,Login*/
 .HomePanel{
     margin-top:80px;
 }
+
 
 .typing{
     font-size:42px;
     font-weight:400;
 }
 
-.title-panel {
+.title-panel{
     background-color: #146363;
     display: flex;
-    justify-content: center;
+    justify-content:center;
     margin-top: 30px;
     width: 200px;
     height: 50px;
@@ -172,15 +173,15 @@ footer .col-md-6 ul li a {
     }
 
     .col-8 p {
-        font-size: 10px;
+        font-size: 12px;
     }
 
-    .col-md-6 label {
-        font-size: 20px;
+    .col-sm-6 .social-network {
+        font-size: 16px;
     }
 
-    .col-md-6 ul li {
-        font-size: 18px;
+    .col-sm-6 .network li{
+        font-size: 16px;
     }
 }
 
