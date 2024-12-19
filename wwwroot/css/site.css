@@ -33,10 +33,52 @@ body, html {
 }
 
 
-/*Home,Orders,Users,Login*/
+/*Home,Orders,Users,Login,Store,Help*/
 .HomePanel{
     margin-top:80px;
 }
+
+.Store {
+    margin-top: 120px;
+}
+
+.Store h2{
+    margin-bottom: 40px;
+}
+
+.Help{
+    margin-top:30px;
+    margin-bottom:20px;
+}
+
+.Register{
+    margin-top:80px;
+    margin-bottom:30px;
+}
+.Login{
+    margin-top:80px;
+    margin-bottom:100px;
+}
+
+.Products{
+    margin-top:120px;
+    margin-bottom:20px;
+}
+
+.Products h2{
+    margin-bottom: 40px;
+}
+
+.NewProduct{
+    margin-top:80px;
+    margin-bottom:40px;
+}
+
+.EditProduct{
+    margin-top:100px;
+    margin-bottom:40px;
+}
+
 
 
 .typing{
