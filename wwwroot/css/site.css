@@ -1,43 +1,6 @@
 html {
-  font-size: 12px;
+  font-size: 16px;
 }
-
-@media (min-width: 768px) {
-  html {
-    font-size: 16px;
-  }
-}
-
-@media (max-width:575px){
-  .table-responsive-sm .table thead tr{
-      font-size:8px;
-  }
-
-    .table-responsive-sm .table tbody tr {
-        font-size: 6px;
-    }
-
-    .table-responsive-sm .table tbody .btn {
-        font-size: 6px;
-    }
-
-    .table-responsive-sm .table tbody .img-product img {
-        background-color:green;
-        max-width:30px;
-        max-height:40px;
-    }
-
-    .row .btn-product,
-    .row .btn-Register {
-        margin-bottom:10px;
-    }
-
-    .active {
-        background-color: #D2DBDB;
-        border-radius: 10px;
-    }
-}
-
 
 /*.body-content {
     margin-top: 80px;
@@ -189,19 +152,50 @@ footer .col-md-6 ul li a {
     .Developer p {
         font-size: 12px;
     }
+    html {
+        font-size: 12px;
+    }
 }
 
-@media screen and (max-width:576px) {
-    .title-panel {
-        font-size: 18px;
-        width: 140px;
-        height: 30px;
-    }
+@media (max-width:576px) {
+        .table-responsive-sm .table thead tr {
+            font-size: 8px;
+        }
 
-    .account-position {
+        .table-responsive-sm .table tbody tr {
+            font-size: 6px;
+        }
+
+        .table-responsive-sm .table tbody .btn {
+            font-size: 6px;
+        }
+
+        .table-responsive-sm .table tbody .img-product img {
+            background-color: green;
+            max-width: 30px;
+            max-height: 40px;
+        }
+
+        .row .btn-product,
+        .row .btn-Register {
+            margin-bottom: 10px;
+        }
+
+        .active {
+            background-color: #D2DBDB;
+            border-radius: 10px;
+        }
+
+        .title-panel {
+            font-size: 18px;
+            width: 140px;
+            height: 30px;
+        }
+
+        .account-position {
         margin-bottom: 14px;
         margin-top: 10px;
-    }
+        }
 }
 
 
