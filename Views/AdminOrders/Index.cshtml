@@ -1,112 +1,115 @@
 ﻿
 @{
 }
-<h3 class="text-center container py-2 title-panel">List of Orders</h3>
-<div class="table-responsive-sm">
-    <table class="table">
-        <thead>
-            <tr>
-                @* <th>Id</th>  *@
-                <th>Client</th>
-                <th>Units</th>
-                <th>Total</th>
-                <th>Payment Method</th>
-                <th>Payment Status</th>
-                <th>Order Status</th>
-                <th>Date</th>
-                <th></th>
-            </tr>
-        </thead>
 
-        <tbody>
-            @foreach (Order order in ViewBag.Orders)
-            {
-
-                int count = 0;
-                decimal total = order.ShippingFee;
-                foreach (OrderItem item in order.Items)
-                {
-                    count += item.Quantity;
-                    total += item.Quantity * item.UnitPrice;
-                }
-
-
-                string paymentBadgeColor = "bg-danger";
-                if (order.PayementStatus == "pending")
-                {
-                    paymentBadgeColor = "bg-warning text-dark";
-                }
-                else if (order.PayementStatus == "accepted")
-                {
-                    paymentBadgeColor = "bg-success";
-                }
-                else if (order.PayementStatus == "canceled")
-                {
-                    paymentBadgeColor = "bg-secondary";
-                }
-
-                string orderBadgeColor = "bg-danger";
-                if (order.OrderStatus == "created")
-                {
-                    orderBadgeColor = "bg-warning text-dark";
-                }
-                else if (order.OrderStatus == "accepted")
-                {
-                    orderBadgeColor = "bg-success";
-                }
-                else if (order.OrderStatus == "canceled")
-                {
-                    orderBadgeColor = "bg-secondary";
-                }
-                else if (order.OrderStatus == "shipped")
-                {
-                    orderBadgeColor = "bg-primary";
-                }
-                else if (order.OrderStatus == "delivered")
-                {
-                    orderBadgeColor = "bg-success";
-                }
-                else if (order.OrderStatus == "returned")
-                {
-                    orderBadgeColor = "bg-info text-dark";
-                }
-                else if (order.OrderStatus == "deleted")
-                {
-                    orderBadgeColor = "bg-dark";
-                }
-
+<div class="Orders col-md-8 mx-auto">
+    <h3 class="text-center container py-2 title-panel">List of Orders</h3>
+    <div class="table-responsive-sm">
+        <table class="table">
+            <thead>
                 <tr>
-                    @* <td>@order.Id</td> *@
-                    <td>@(order.Client.FirstName + " " + order.Client.LastName)</td>
-                    <td>@count</td>
-                    <td>@(total)$</td>
-                    <td>@order.PayementMethod</td>
-                    <td><span class="badge rounded-pill @paymentBadgeColor" style="text-align:center;justify-content:center;">@order.PayementStatus</span></td>
-                    <td><span class="badge rounded-pill @orderBadgeColor" style="text-align:center;justify-content:center;">@order.OrderStatus</span></td>
-                    <td>@order.CreatedAt.ToString("MM/dd/yyyy")</td>
-                    <td style="white-space:nowrap;">
-                        <a class="btn-sm" asp-controller="AdminOrders" asp-action="Details"
-                           asp-route-id="@order.Id">
-                            <i class="bi bi-pencil-square" style="color:#248f8f;"></i>
-                       </a>
-                    </td>
+                    @* <th>Id</th>  *@
+                    <th>Client</th>
+                    <th>Units</th>
+                    <th>Total</th>
+                    <th>Payment Method</th>
+                    <th>Payment Status</th>
+                    <th>Order Status</th>
+                    <th>Date</th>
+                    <th></th>
                 </tr>
-            }
-        </tbody>
-    </table>
+            </thead>
+
+            <tbody>
+                @foreach (Order order in ViewBag.Orders)
+                {
+
+                    int count = 0;
+                    decimal total = order.ShippingFee;
+                    foreach (OrderItem item in order.Items)
+                    {
+                        count += item.Quantity;
+                        total += item.Quantity * item.UnitPrice;
+                    }
 
 
-    <nav>
-        <ul class="pagination">
-            @for (int i = 1; i <= ViewBag.TotalPages; i++)
-            {
-                string active = "";
-                if (i == ViewBag.PageIndex) active = "active";
+                    string paymentBadgeColor = "bg-danger";
+                    if (order.PayementStatus == "pending")
+                    {
+                        paymentBadgeColor = "bg-warning text-dark";
+                    }
+                    else if (order.PayementStatus == "accepted")
+                    {
+                        paymentBadgeColor = "bg-success";
+                    }
+                    else if (order.PayementStatus == "canceled")
+                    {
+                        paymentBadgeColor = "bg-secondary";
+                    }
 
-                <li class="page-item @active">
-                    <a class="page-link" asp-route-pageIndex=@i>@i</a>
-                </li>
-            }
-        </ul>
-    </nav>
+                    string orderBadgeColor = "bg-danger";
+                    if (order.OrderStatus == "created")
+                    {
+                        orderBadgeColor = "bg-warning text-dark";
+                    }
+                    else if (order.OrderStatus == "accepted")
+                    {
+                        orderBadgeColor = "bg-success";
+                    }
+                    else if (order.OrderStatus == "canceled")
+                    {
+                        orderBadgeColor = "bg-secondary";
+                    }
+                    else if (order.OrderStatus == "shipped")
+                    {
+                        orderBadgeColor = "bg-primary";
+                    }
+                    else if (order.OrderStatus == "delivered")
+                    {
+                        orderBadgeColor = "bg-success";
+                    }
+                    else if (order.OrderStatus == "returned")
+                    {
+                        orderBadgeColor = "bg-info text-dark";
+                    }
+                    else if (order.OrderStatus == "deleted")
+                    {
+                        orderBadgeColor = "bg-dark";
+                    }
+
+                    <tr>
+                        @* <td>@order.Id</td> *@
+                        <td>@(order.Client.FirstName + " " + order.Client.LastName)</td>
+                        <td>@count</td>
+                        <td>@(total)$</td>
+                        <td>@order.PayementMethod</td>
+                        <td><span class="badge rounded-pill @paymentBadgeColor" style="text-align:center;justify-content:center;">@order.PayementStatus</span></td>
+                        <td><span class="badge rounded-pill @orderBadgeColor" style="text-align:center;justify-content:center;">@order.OrderStatus</span></td>
+                        <td>@order.CreatedAt.ToString("MM/dd/yyyy")</td>
+                        <td style="white-space:nowrap;">
+                            <a class="btn-sm" asp-controller="AdminOrders" asp-action="Details"
+                               asp-route-id="@order.Id">
+                                <i class="bi bi-pencil-square" style="color:#248f8f;"></i>
+                           </a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+
+
+        <nav>
+            <ul class="pagination">
+                @for (int i = 1; i <= ViewBag.TotalPages; i++)
+                {
+                    string active = "";
+                    if (i == ViewBag.PageIndex) active = "active";
+
+                    <li class="page-item @active">
+                        <a class="page-link" asp-route-pageIndex=@i>@i</a>
+                    </li>
+                }
+            </ul>
+        </nav>
+    </div>
 </div>

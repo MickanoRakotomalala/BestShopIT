@@ -4,48 +4,50 @@
     ViewData["HomePage"] = true;
 }
 
-<div style="background-color :#08618d" class="HomePanel">
-    <div class="container  text-white py-5">
-        <div class="row align-items-center g-5">
-            <div class="col-md-6">
-                <h1 class="mb-5 display-2"><span class="typing"></span></h1>
-                <p>
-                    Find a large selection of newest electronic devices from most popular brands
-                    and with affordable prices
-                </p>
-            </div>
-            <div class="col-md-6 text-center">
-                <img src="/images/hero.png" alt="hero" class="img-fluid"/>
+<div class="Home">
+    <div style="background-color :#08618d">
+        <div class="container  text-white py-5">
+            <div class="row align-items-center">
+                <div class="col-md-6">
+                    <h1 class="mb-5 display-2"><span class="typing"></span></h1>
+                    <p>
+                        Find a large selection of newest electronic devices from most popular brands
+                        and with affordable prices
+                    </p>
+                </div>
+                <div class="col-md-6 text-center">
+                    <img src="/images/hero.png" alt="hero" class="img-fluid"/>
+                </div>
             </div>
         </div>
     </div>
-</div>
 
-<div class="bg-light">
-<h2 class="pb-4 text-center title-panel container py-2" id="animatedNewProducts">Newest Products</h2>
-    <div class="container py-4">
-        <div class="row mb-5 g-3">
-            @foreach(var product in Model)
-            {
-                <div class="col-lg-3 col-md-6 style-product">
-                    <div class="rounded border shadow p-3 text-center h-100">
-                        <img src="/products/@product.ImageFileName" class="img-fluid" alt="..."
-                            style="height: 160px; object-fit :contain;background:none;"/>
-                        <hr/>
-                        <h5 class="py-2">@product.Name</h5>
-                        <p>
-                            <span style="font-weight:500;">Brand : </span>@product.Brand,<br>
-                            <span style="font-weight:500;">Category : </span>@product.Category
-                        </p>
-                        <h4 class="mb-3">@(product.Price)$</h4>
-                        <a class="btn btn-outline-primary btn-sm mb-2" asp-controller="Store" 
-                            asp-action="Details" asp-route-id="@product.Id" role="button">Details</a>
-                        <button type="button" class="btn btn-warning btn-sm mb-2" onclick="addToCart(this, @product.Id)">
-                            Add to Cart <i class="bi bi-cart4"></i>
-                        </button>
+    <div class="bg-light">
+        <h2 class="pb-4 text-center title-panel container py-2" id="animatedNewProducts">Newest Products</h2>
+        <div class="container py-4">
+            <div class="row mb-5 g-3">
+                @foreach(var product in Model)
+                {
+                    <div class="col-lg-3 col-md-6 style-product">
+                        <div class="rounded border shadow p-3 text-center h-100">
+                            <img src="/products/@product.ImageFileName" class="img-fluid" alt="..."
+                                style="height: 160px; object-fit :contain;background:none;"/>
+                            <hr/>
+                            <h5 class="py-2">@product.Name</h5>
+                            <p>
+                                <span style="font-weight:500;">Brand : </span>@product.Brand,<br>
+                                <span style="font-weight:500;">Category : </span>@product.Category
+                            </p>
+                            <h4 class="mb-3">@(product.Price)$</h4>
+                            <a class="btn btn-outline-primary btn-sm mb-2" asp-controller="Store" 
+                                asp-action="Details" asp-route-id="@product.Id" role="button">Details</a>
+                            <button type="button" class="btn btn-warning btn-sm mb-2" onclick="addToCart(this, @product.Id)">
+                                Add to Cart <i class="bi bi-cart4"></i>
+                            </button>
+                        </div>
                     </div>
-                </div>
-            }
+                }
+            </div>
         </div>
     </div>
 </div>

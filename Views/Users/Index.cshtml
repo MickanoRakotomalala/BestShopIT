@@ -3,74 +3,76 @@
 @inject UserManager<ApplicationUser> UserManager
 @{
 }
-<h2 class="text-center container py-2 title-panel">List of Users</h2>
 
-<div class="table-responsive-sm">
-    <table class="table">
-        <thead>
-            <tr>
-                <th>Name</th>
-                <th>Email</th>
-                <th>Phone</th>
-                <th>Role</th>
-                <th>Created At</th>
-                <th></th>
-            </tr>
-        </thead>
-
-        <tbody>
-            @foreach(var user in Model)
-            {
+<div class="Users col-md-8 mx-auto">
+    <h2 class="text-center container py-2 title-panel">List of Users</h2>
+    <div class="table-responsive-sm">
+        <table class="table">
+            <thead>
                 <tr>
-                    <td>@(user.FirstName + " " + user.LastName)</td>
-                    <td>@(user.Email)</td>
-                    <td>@(user.PhoneNumber)</td>
-                    <td>
-                        @{
-                            var roles = await UserManager.GetRolesAsync(user);
-                            var rolesStr = string.Join(",", roles);
-
-                            string color = "bg-secondary";
-                            if(roles.Contains("admin"))
-                            {
-                                color = "bg-danger";
-                            }
-                            else if(roles.Contains("seller"))
-                            {
-                                color = "bg-warning text-dark";
-                            }
-                            else if(roles.Contains("client"))
-                            {
-                                color = "bg-info text-dark";    
-                            }
-
-                            <span class="badge rounded-pill @color">@rolesStr</span>
-                        
-                        }
-                    </td>
-                    <td>@user.CreatedAt.ToString("dd/MM/yyyy")</td>
-                    <td>
-                        <a class="btn-sm" asp-controller="Users" asp-action="Details" asp-route-id="@user.Id">
-                            <i class="bi bi-pencil-square" style="color:#248f8f;"></i>
-                        </a>
-                    </td>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Phone</th>
+                    <th>Role</th>
+                    <th>Created At</th>
+                    <th></th>
                 </tr>
-            }
+            </thead>
 
-        </tbody>
-    </table>
+            <tbody>
+                @foreach(var user in Model)
+                {
+                    <tr>
+                        <td>@(user.FirstName + " " + user.LastName)</td>
+                        <td>@(user.Email)</td>
+                        <td>@(user.PhoneNumber)</td>
+                        <td>
+                            @{
+                                var roles = await UserManager.GetRolesAsync(user);
+                                var rolesStr = string.Join(",", roles);
 
-    <nav>
-        <ul class="pagination">
-            @for(int i = 1; i <= ViewBag.TotalPages; i++)
-            {
-                string active = "";
-                if (i == ViewBag.PageIndex) active = "active";
+                                string color = "bg-secondary";
+                                if(roles.Contains("admin"))
+                                {
+                                    color = "bg-danger";
+                                }
+                                else if(roles.Contains("seller"))
+                                {
+                                    color = "bg-warning text-dark";
+                                }
+                                else if(roles.Contains("client"))
+                                {
+                                    color = "bg-info text-dark";    
+                                }
 
-                <li class="page-item @active">
-                    <a class="page-link" asp-route-pageIndex="@i">@i</a>
-                </li>
-            }
-        </ul>
-    </nav>
+                                <span class="badge rounded-pill @color">@rolesStr</span>
+                        
+                            }
+                        </td>
+                        <td>@user.CreatedAt.ToString("dd/MM/yyyy")</td>
+                        <td>
+                            <a class="btn-sm" asp-controller="Users" asp-action="Details" asp-route-id="@user.Id">
+                                <i class="bi bi-pencil-square" style="color:#248f8f;"></i>
+                            </a>
+                        </td>
+                    </tr>
+                }
+
+            </tbody>
+        </table>
+
+        <nav>
+            <ul class="pagination">
+                @for(int i = 1; i <= ViewBag.TotalPages; i++)
+                {
+                    string active = "";
+                    if (i == ViewBag.PageIndex) active = "active";
+
+                    <li class="page-item @active">
+                        <a class="page-link" asp-route-pageIndex="@i">@i</a>
+                    </li>
+                }
+            </ul>
+        </nav>
+    </div>
 </div>
