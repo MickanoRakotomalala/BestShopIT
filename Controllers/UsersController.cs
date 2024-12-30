@@ -51,7 +51,7 @@ namespace BestShopIT.Controllers
             var appUser = await userManager.FindByIdAsync(id);
             if (appUser == null) 
             {
-                return RedirectToAction("Indew", "Users");
+                return RedirectToAction("Index", "Users");
             }
 
             ViewBag.Roles = await userManager.GetRolesAsync(appUser);
